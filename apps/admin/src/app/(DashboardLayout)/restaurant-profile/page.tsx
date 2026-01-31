@@ -194,7 +194,7 @@ export default function RestaurantProfilePage() {
         socialLinks,
         holidayClosures,
         specialHours,
-        logo: logoId ? { id: logoId } : null,
+        logo: logoId ? ({ id: logoId } as any) : null,
       });
       setProfile(updatedProfile);
       // Refresh global profile context to update header logo/name
