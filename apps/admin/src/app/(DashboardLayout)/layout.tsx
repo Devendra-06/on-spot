@@ -1,0 +1,45 @@
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import Header from './layout/header/Header'
+import Topbar from './layout/header/Topbar'
+import Sidebar from './layout/sidebar/Sidebar'
+import { RestaurantProfileProvider } from '@/app/context/RestaurantProfileContext'
+
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      router.push('/auth/login')
+    }
+  }, [router])
+
+  return (
+    <RestaurantProfileProvider>
+      <div className='flex w-full min-h-screen'>
+        <div className='page-wrapper flex w-full'>
+          {/* Header/sidebar */}
+          <div className='xl:block hidden'>
+            <Sidebar />
+          </div>
+
+          <div className='body-wrapper w-full'>
+            {/* Top Header  */}
+            <Header />
+            {/* Body Content  */}
+            <div className="bg-lightgray dark:bg-dark mr-3 rounded-3xl min-h-[90vh]">
+              <div className={`container mx-auto px-6 py-30`}>{children}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </RestaurantProfileProvider>
+  )
+}
