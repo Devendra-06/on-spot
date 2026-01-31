@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(flutter --version:*)",
+      "Bash(taskkill:*)",
+      "Bash(del /S /Q \"C:\\\\Users\\\\DELL\\\\.gradle\\\\*.lock\")",
+      "Bash(cmd /c \"rmdir /S /Q C:\\\\Users\\\\DELL\\\\.gradle\\\\wrapper\\\\dists\\\\gradle-7.5-all 2>nul\")",
+      "Bash(del \"D:\\\\Code-99\\\\Food-Delivery-App\\\\apps\\\\customer\\\\android\\\\app\\\\src\\\\main\\\\java\\\\io\\\\flutter\\\\app\\\\FlutterMultiDexApplication.java\")",
+      "WebFetch(domain:onspot-2k6d.onrender.com)"
+    ]
+  }
+}
