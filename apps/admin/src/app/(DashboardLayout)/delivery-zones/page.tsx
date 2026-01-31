@@ -113,6 +113,7 @@ export default function DeliveryZonesPage() {
         postalCodes: postalCodes || undefined,
         areaNames: areaNames || undefined,
         isActive,
+        sortOrder: 0,
       };
 
       if (editingZone) {
@@ -342,11 +343,10 @@ export default function DeliveryZonesPage() {
                   <TableCell>
                     <button
                       onClick={() => handleToggleActive(zone)}
-                      className={`px-2 py-1 text-xs rounded-full ${
-                        zone.isActive
+                      className={`px-2 py-1 text-xs rounded-full ${zone.isActive
                           ? 'bg-green-100 text-green-800'
                           : 'bg-gray-100 text-gray-600'
-                      }`}
+                        }`}
                     >
                       {zone.isActive ? 'Active' : 'Inactive'}
                     </button>
